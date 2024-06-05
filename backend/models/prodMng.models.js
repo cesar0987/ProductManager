@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema(
   {
+    id: {
+      type: Number,
+      required: [true, "ID is required"],
+      min: [0, "ID must be a positive number"],
+    },
     title: {
       type: String,
       required: [true, "Title is required"],
