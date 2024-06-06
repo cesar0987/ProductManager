@@ -3,40 +3,22 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export const ProductFind = () => {
-    const [product, setProduct] = useState(null); // Initialize as null to handle the state before a product is found
+    const [product, setProduct] = useState(null);
     const [id, setId] = useState(1);
 
     const { id: idParam } = useParams();
     if (idParam && idParam !== id) {
         setId(idParam);
     }
-
-    const getProducts = () => {
-        const url = "http://localhost:8000/api/product/";
-        axios.get(url)
-            .then((res) => {
-                console.log(res);
-                setProduct(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
-
-    useEffect(() => {
-        getProducts();
-    }
-    , []); // Empty dependency array ensures this runs once when the component mounts
-
-    const findProduct = (e) => {
+    const findProduct = async (e) => {
         e.preventDefault();
-        product.find((product) => {
-            if (product._id === id) {
-             setProduct(product);
-            }
+        try {
+            const response = await axios.get(`http://localhost:8000/api/product/${id}`);
+            setProduct(response.data);
+            console.log(response);
+        } catch (err) {
+            console.log(err);
         }
-        );
-
     }
 
     return (
@@ -57,4 +39,4 @@ export const ProductFind = () => {
     );
 
 
-}
+};

@@ -13,7 +13,7 @@ module.exports.findAllProducts = (req, res) => {
 };
 
 module.exports.findOneProduct = (req, res) => {
-  ProdMng.findOne({ _id: req.params.id })
+  ProdMng.findOne({ id: req.params.id })
     .then((oneProduct) => res.json(oneProduct))
     .catch((err) => res.json(err));
 };
