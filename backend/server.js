@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 prodMngRoutes(app);
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT} for REQuests to RESpond to.`);
+  console.log(`Listening on port ${PORT} for Requests to Respond to.`);
 });
 
 app.post("/api/product/new", (req, res) => {
