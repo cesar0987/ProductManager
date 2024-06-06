@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 const prodMngRoutes = require("./routes/prodMng.routes");
 const mongoose = require("mongoose");
-const port = 8000;
+const PORT = process.env.PORT;
 
 require("./configuration/configuration.mongoose");
 app.use(cors());
