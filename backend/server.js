@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -12,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 
 prodMngRoutes(app);
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port} for REQuests to RESpond to.`);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT} for REQuests to RESpond to.`);
 });
 
 app.post("/api/product/new", (req, res) => {
