@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const prodMngRoutes = require("./routes/prodMng.routes");
-const mongoose = require("mongoose");
+const { default: mongoose } = require("mongoose");
 const PORT = process.env.PORT;
 
 require("./configuration/configuration.mongoose");
@@ -21,4 +21,13 @@ app.post("/api/product/new", (req, res) => {
   console.log("Request to create a new product");
   console.log(req.body);
   res.json({ message: "Request received" });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
+mongoose.connection.on("error", (err) => {
+  console.error(`Mongoose connection error: ${err}`);
 });
