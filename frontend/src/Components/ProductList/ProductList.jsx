@@ -28,17 +28,15 @@ export const ProductList = () => {
                         <th>Title</th>
                         <th>Price</th>
                         <th>Description</th>
-                        <th>Product Id</th>
                     </tr>
                 </thead>
                 <tbody>
                     {savedProducts.map((product,index) => (
-                        <tr key={index+1}>
-                            <td>{index+1}</td>
+                        <tr key={product.id}>
+                            <td>{product.id}</td>
                             <td>{product.title}</td>
                             <td>{product.price}</td>
                             <td>{product.description}</td>
-                            <td>{product._id}</td>
                         </tr>
                     ))}
                 </tbody>
