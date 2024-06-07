@@ -22,12 +22,3 @@ app.post("/api/product/new", (req, res) => {
   console.log(req.body);
   res.json({ message: "Request received" });
 });
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something broke!");
-});
-
-mongoose.connection.on("error", (err) => {
-  console.error(`Mongoose connection error: ${err}`);
-});
