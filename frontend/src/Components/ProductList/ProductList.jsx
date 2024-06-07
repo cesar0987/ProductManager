@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export const ProductList = () => {
     const [savedProducts, setSavedProducts] = useState([]);
-    const url = "http://localhost:8000/api/product/";
+    const url = "https://product-manager-backend.vercel.app/api/product/";
 
     useEffect(() => {
         axios.get(url)
