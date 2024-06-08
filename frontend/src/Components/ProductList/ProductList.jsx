@@ -1,6 +1,8 @@
 import "./ProductList.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
+
 
 export const ProductList = () => {
     const [savedProducts, setSavedProducts] = useState([]);
@@ -17,6 +19,7 @@ export const ProductList = () => {
             });
     }, []); // Empty dependency array ensures this runs once when the component mounts
 
+    const navigate = useNavigate();
     return (
         <div>
             <h1>Product List</h1>
@@ -28,6 +31,7 @@ export const ProductList = () => {
                         <th>Title</th>
                         <th>Price</th>
                         <th>Description</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,6 +41,8 @@ export const ProductList = () => {
                             <td>{product.title}</td>
                             <td>{product.price}</td>
                             <td>{product.description}</td>
+                            <td><button onClick={() => navigate(`/product/${product.id}`)}>Edit</button></td>
+
                         </tr>
                     ))}
                 </tbody>

@@ -4,6 +4,7 @@ import { ProductMng } from "../ProductMng/ProductMng";
 import { Routes, Route,Link } from "react-router-dom";
 import { ProductList } from "../ProductList/ProductList";
 import { ProductFind } from "../ProductFind/ProductFind";
+import { ProductEdit } from "../ProductEdit/ProductEdit";
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
         <Route path="/product/creation" element={<ProductMng />} />
         <Route path="/product/list/" element={<ProductList />} />
         <Route path="/product/find/:id?" element={<ProductFind />} />
+        <Route path="/product/?:id" element={<ProductEdit />} />
       </Routes>
     </div>
   );
