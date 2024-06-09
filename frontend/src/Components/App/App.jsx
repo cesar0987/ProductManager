@@ -26,7 +26,7 @@ function App() {
         <Route path="/product/creation" element={<ProductMng />} />
         <Route path="/product/list/" element={<ProductList />} />
         <Route path="/product/find/:id?" element={<ProductFind />} />
-        <Route path="/product/?:id" element={<ProductEdit />} />
+        <Route path="/product/:id?" element={<ProductEdit />} />
       </Routes>
     </div>
   );

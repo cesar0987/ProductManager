@@ -13,7 +13,7 @@ export const ProductFind = () => {
     const findProduct = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`https://product-manager-backend.vercel.app/api/product/${id}`);
+            const response = await axios.get(`http://localhost:8000/api/product/${id}`);
             setProduct(response.data);
             console.log(response);
         } catch (err) {

@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 export const ProductList = () => {
     const [savedProducts, setSavedProducts] = useState([]);
-    const url = "https://product-manager-backend.vercel.app/api/product/";
+    const url = "http://localhost:8000/api/product/";
 
     useEffect(() => {
         axios.get(url)

@@ -6,7 +6,7 @@ export const ProductMng = () => {
     const [id, setId] = useState(null);
 
     const getProducts = () => {
-        axios.get("https://product-manager-backend.vercel.app/api/product/")
+        axios.get("http://localhost:8000/api/product/")
             .then((res) => {
                 if (res.data.length > 0) {
                     setId(res.data.length + 1);
@@ -39,7 +39,7 @@ export const ProductMng = () => {
         };
 
 
-        const url = "https://product-manager-backend.vercel.app/api/product/new";
+        const url = "http://localhost:8000/api/product/new";
         try {
             const response = await axios.post(url, data, {
                 method: "POST",
