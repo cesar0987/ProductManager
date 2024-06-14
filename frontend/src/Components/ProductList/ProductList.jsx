@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 export const ProductList = () => {
     const [savedProducts, setSavedProducts] = useState([]);
-    const url = "http://localhost:8000/api/product/";
+    const url = "https://authors-lryr.onrender.com/api/product/";
 
     useEffect(() => {
         axios.get(url)

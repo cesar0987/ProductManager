@@ -39,7 +39,7 @@ export const ProductMng = () => {
         };
 
 
-        const url = "http://localhost:8000/api/product/new";
+        const url = "https://authors-lryr.onrender.com/api/product/new";
         try {
             const response = await axios.post(url, data, {
                 method: "POST",
